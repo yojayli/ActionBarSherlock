@@ -1,3 +1,5 @@
+import com.android.builder.DefaultManifestParser
+
 apply plugin: 'android-library'
 
 dependencies {
@@ -15,4 +17,5 @@ android {
       res.srcDirs = ['res']
     }
   }
+  project.version = new DefaultManifestParser().getVersionName(android.sourceSets.main.manifest.srcFile)
 }
